@@ -1,8 +1,11 @@
+import 'package:criadouro/novoFilhote.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+const white = Colors.white;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,14 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Criadouro',
+      title: 'Criadouro Bozzi',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-          useMaterial3: true,
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
-            foregroundColor: Colors.white,
-          )),
-      home: const MyHomePage(title: 'Criadouro'),
+        colorScheme: ColorScheme.fromSeed(seedColor: white),
+        useMaterial3: true,
+      ),
+      home: const MyHomePage(title: 'Criadouro Bozzi'),
     );
   }
 }
@@ -44,30 +45,124 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Você pressionou o botão:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const Text(
-              'vezes',
-            )
-          ],
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 240),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 80),
+                child: ClipOval(
+                  child: Image(
+                    image: AssetImage('images/trinca.jpg'),
+                    width: 240,
+                    // Defina o tamanho da imagem aqui
+                    height: 240,
+                    // Defina o tamanho da imagem aqui
+                    fit: BoxFit
+                        .cover, // Define como a imagem será ajustada dentro do círculo
+                  ),
+                ),
+              ),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 16.0,
+                runSpacing: 16.0,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => novoFilhote(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.add_circle_rounded),
+                        SizedBox(width: 8),
+                        Text(
+                          'Filhote',
+                          style: TextStyle(fontSize: 22),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => novoFilhote(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.add_circle_rounded),
+                        SizedBox(width: 8),
+                        Text(
+                          'Filhote',
+                          style: TextStyle(fontSize: 22),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => novoFilhote(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.add_circle_rounded),
+                        SizedBox(width: 8),
+                        Text(
+                          'Filhote',
+                          style: TextStyle(fontSize: 22),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => novoFilhote(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.add_circle_rounded),
+                        SizedBox(width: 8),
+                        Text(
+                          'Filhote',
+                          style: TextStyle(fontSize: 22),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
