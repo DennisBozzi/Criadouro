@@ -1,4 +1,6 @@
-import 'package:criadouro/novoFilhote.dart';
+import 'package:criadouro/femea.dart';
+import 'package:criadouro/filhote.dart';
+import 'package:criadouro/macho.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,19 +24,18 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
+
   final String title;
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
+
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,21 +46,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.only(bottom: 240),
+          padding: const EdgeInsets.only(bottom: 140),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(bottom: 80),
                 child: ClipOval(
                   child: Image(
                     image: AssetImage('images/trinca.jpg'),
                     width: 240,
-                    // Defina o tamanho da imagem aqui
                     height: 240,
-                    // Defina o tamanho da imagem aqui
-                    fit: BoxFit
-                        .cover, // Define como a imagem será ajustada dentro do círculo
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -73,17 +71,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => novoFilhote(),
+                          builder: (context) => filhote(),
                         ),
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.add_circle_rounded),
                         SizedBox(width: 8),
                         Text(
-                          'Filhote',
+                          'Filhotes',
                           style: TextStyle(fontSize: 22),
                         ),
                       ],
@@ -94,17 +92,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => novoFilhote(),
+                          builder: (context) => femea(),
                         ),
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.add_circle_rounded),
                         SizedBox(width: 8),
                         Text(
-                          'Filhote',
+                          'Fêmeas',
                           style: TextStyle(fontSize: 22),
                         ),
                       ],
@@ -115,17 +113,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => novoFilhote(),
+                          builder: (context) => macho(),
                         ),
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.add_circle_rounded),
                         SizedBox(width: 8),
                         Text(
-                          'Filhote',
+                          'Machos',
                           style: TextStyle(fontSize: 22),
                         ),
                       ],
@@ -136,17 +134,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => novoFilhote(),
+                          builder: (context) => filhote(),
                         ),
                       );
                     },
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(Icons.add_circle_rounded),
                         SizedBox(width: 8),
                         Text(
-                          'Filhote',
+                          'Outros',
                           style: TextStyle(fontSize: 22),
                         ),
                       ],
