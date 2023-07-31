@@ -6,7 +6,7 @@ List<String> datas = ['2005', '2006', '2007', '2008', '2009', '2010', '2011', '2
 
 String? opcaoSelecionada;
 
-List<DropdownMenuItem<String>> dropdownItems = datas.map((String value) {
+List<DropdownMenuItem<String>> anos = datas.map((String value) {
   return DropdownMenuItem<String>(
     value: value,
     child: Text(value),
@@ -18,32 +18,38 @@ class filhote extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Filhotes'),
+        title: const Text('Filhotes'),
       ),
       body: Center(
-        child: Container(
-          alignment: Alignment.topCenter, // Centraliza o conteúdo do Container
-          width: 300,
-          child: DropdownButton(
-            items: dropdownItems,
-            onChanged: (String? newValue) {
-              opcaoSelecionada = newValue!;
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => filhote(),
-                ),
-              );
-              print(opcaoSelecionada);
-            },
-            value: opcaoSelecionada,
-            isExpanded: true,
-          ),
+        child: Column(
+          children: [
+            const Text('Alguma Coisa', style: TextStyle(fontSize: 28)),
+            Container(
+              alignment: Alignment.topCenter, // Centraliza o conteúdo do Container
+              width: 400,
+              child: DropdownButton(
+                items: anos,
+                onChanged: (String? newValue) {
+                  opcaoSelecionada = newValue!;
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => filhote(),
+                    ),
+                  );
+                  print(opcaoSelecionada);
+                },
+                value: opcaoSelecionada,
+                isExpanded: true,
+                hint: const Text('Escolha uma Data'),
+              ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.black,
-        child: Icon(
+        child: const Icon(
           Icons.add,
           color: Colors.white,
         ),

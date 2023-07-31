@@ -10,8 +10,23 @@ class addFilhote extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
       ),
-      body: const Center(
-        child: Text('Banana'),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Nome'),
+            Container(
+              constraints: BoxConstraints(
+                maxWidth: 300, // Defina aqui a largura máxima desejada para o TextField
+              ),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Escreva o nome aqui',
+                ),
+              ),
+            ),
+            // Adicione outros campos de entrada abaixo, se necessário.
+          ],
+        ),
       ),
     );
   }
